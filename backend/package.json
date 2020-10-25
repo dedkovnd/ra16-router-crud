@@ -1,11 +1,9 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "dependencies": {
-  },
   "script": {
-    "prestart":"npm install",
-    "start":"forever server.js",
-    "watch":"forever -w server.js"
+    "prestart": "npm install",
+    "start": "forever server.js",
+    "watch": "forever -w server.js"
   }
 }

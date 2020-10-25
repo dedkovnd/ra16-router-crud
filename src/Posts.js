@@ -1,17 +1,16 @@
-import React, {useState,useEffect} from 'react'
+import React, {useContext} from 'react'
+import {Link} from 'react-router-dom';
+import {PostsContext} from "./PostContext";
 
 export function Posts() {
-    const [state, setState] = useState([])
-    console.log(state)
-    useEffect(()=>{
-        fetch('http://localhost:7777/posts')
-            .then(response=> response.json())
-            .then(json=>setState(json))
-    }, [])
+   const posts = useContext(PostsContext)
 
     return (
-        <ul>
-            {state.map((post,i)=><li key={i}>{post.content}</li>)}
-        </ul>
+        <div>
+            <Link to="/posts/new">Создать пост</Link>
+            {posts.map((post,i)=><div key={i}>
+                <Link to="/posts/:id([0-9]+)?">{post.content}</Link>
+            </div>)}
+        </div>
     )
 }

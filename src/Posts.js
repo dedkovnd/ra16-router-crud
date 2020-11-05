@@ -9,7 +9,7 @@ export function Posts() {
         <div>
             <Link to="/posts/new">Создать пост</Link>
             {posts.map((post,i)=><div key={i}>
-                <Link to="/posts/:id([0-9]+)?">{post.content}</Link>
+                <Link to={`/posts/:${post.id}?`}>{post.content}</Link>
             </div>)}
         </div>
     )

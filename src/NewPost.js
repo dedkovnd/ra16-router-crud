@@ -39,7 +39,7 @@ export function NewPost() {
         <form onSubmit={buttonHandler}>
             <label htmlFor="post">Post</label>
             <input id="post" name="post" type="text" value={form.content} onChange={changeHandler}></input>
-            <button><Link to="/" style={{"text-decoration": "none"}}>Опубликовать</Link></button>
+            <button type="submit"><Link to="/" style={{"text-decoration": "none"}}>Опубликовать</Link></button>
             <Link to="/">&times;</Link>
         </form>
     )
